@@ -1,0 +1,22 @@
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Estadisticas del menu
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngIf="!hayPlatos">
+        <p>El menu esta vacio</p>
+      </div>
+      <div *ngIf="hayPlatos">
+        <p>Cantidad de platos: {{stats.cant}}</p>
+        <p>Cantidad de platos veganos: {{stats.cantVegan}}</p>
+        <p>Cantidad de platos no veganos: {{stats.cantNoVegan}}</p>
+        <p>Precio total: {{stats.totalPrice}}</p>
+        <p>Tiempo de preparacion promedio: {{stats.averageTime}} Minutos</p>
+        <p>Promedio de HealthScore: {{stats.averageHealthScore}}</p>
+
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>

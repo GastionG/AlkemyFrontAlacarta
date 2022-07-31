@@ -1,0 +1,34 @@
+
+  <mat-card class="mat-card" fxLayout="column" fxLayoutAlign="stretch">
+    
+      <mat-card-content *ngIf="!contenido" class="mat-card-void">
+        <h3>SLOT VACIO</h3>
+      </mat-card-content>
+      <mat-card-header  *ngIf="contenido" class="mat-card-header" fxFlex="10">
+        <mat-card-title>{{recipe.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content *ngIf="contenido" class="mat-card-image" fxFlex="20">
+          <img [src]="recipe.image">
+      </mat-card-content>
+      <mat-card-content *ngIf="recipe.summary" fxFlex="20" class="mat-card-text">
+        <div *ngIf="!statsShow">
+          <span [outerHTML]="recipe.summary"></span>
+
+        </div>
+        <div *ngIf="statsShow">
+          <div>Health Score: {{recipe.healthScore}}</div>
+          <div>Tiempo de preparacion: {{recipe.readyInMinutes}}min</div>
+          <div>Precio: ${{recipe.pricePerServing}}</div>
+          <div *ngIf="recipe.vegan"><span style="color: green;">Si</span> es vegano</div>
+          <div *ngIf="!recipe.vegan"><span style="color: red;">No</span> es vegano</div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions *ngIf="recipe.summary" class="mat-card-actions" fxFlex="10" fxLayout="row" fxLayoutAlign="space-evenly stretch">
+        <button mat-button fxFlex="50" (click)="stats()">Detalles</button>
+        <button mat-button fxFlex="50" (click)="delete()">Eliminar</button>
+      </mat-card-actions>
+      <mat-card-actions *ngIf="!recipe.summary" fxLayoutAlign="center stretch">
+        <button mat-button fxFlex="100" (click)="addFood()" [disabled]="addButtonDisabled">Agregar al menu</button>
+      </mat-card-actions>
+      
+  </mat-card>

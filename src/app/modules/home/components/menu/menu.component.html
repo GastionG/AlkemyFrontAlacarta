@@ -1,0 +1,23 @@
+<div class="content">
+  <app-stats></app-stats>
+  <div class="menu">
+    <mat-card *ngIf="vacio">
+      <mat-card-content>
+        <h3>Tu menu esta vacio. ¡Agrega platos!</h3>
+        <button mat-button (click)="buscar()">Agregar</button>
+      </mat-card-content>
+    </mat-card>
+
+    <app-recipes-list [recipes]="recipes"></app-recipes-list>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>

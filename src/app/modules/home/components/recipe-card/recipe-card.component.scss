@@ -1,0 +1,28 @@
+
+.mat-card-void{
+    text-align: center;
+}
+.mat-card-header{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ 
+}
+mat-card-title{
+    display: inline;
+}
+.mat-card-text{
+    max-height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+            line-clamp: 6; 
+    -webkit-box-orient: vertical;
+}
+.mat-card-text-container{
+    max-height: 100px;
+}

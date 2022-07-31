@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayoutAlign="space-between center" >
+      <div fxLayout="row">
+        <div class="title">
+          <h1 >A La Carta</h1>
+        </div>
+        <div *ngIf="!Xs">
+          <button mat-button (click)="home()">Menu</button>
+          <button mat-button (click)="buscar()">Buscar</button>
+        </div>
+      </div>
+      <div fxLayoutAlign="center">
+        <button mat-button (click)="logout()">
+          <mat-icon fontIcon="logout"></mat-icon>
+          <span *ngIf="!Xs">Cerrar sesion</span>
+        </button>
+      </div>
+    
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="Xs" fxLayoutAlign="space-evenly">
+    <button mat-button fxFlex="50" (click)="home()">Menu</button>
+    <button mat-button fxFlex="50" (click)="buscar()">Buscar</button>
+  </mat-toolbar-row>
+</mat-toolbar>

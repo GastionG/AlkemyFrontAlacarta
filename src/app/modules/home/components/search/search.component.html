@@ -1,0 +1,10 @@
+
+<div class="content">
+    <mat-form-field class="input" appearance="fill">
+        <mat-label>Buscar platos</mat-label>
+        <input matInput placeholder="por ejemplo: pastas" type="text" [formControl]="search">
+    </mat-form-field>
+    <mat-progress-bar *ngIf="buscando"  mode="indeterminate"></mat-progress-bar>
+    <mat-card *ngIf="vacio">No se encontraron platos con ese nombre</mat-card>
+    <app-recipes-list [recipes]="resultRecipes"></app-recipes-list>
+</div>

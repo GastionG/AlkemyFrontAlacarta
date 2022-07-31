@@ -1,0 +1,24 @@
+<div class="body">
+    <div class="login">
+        <form [formGroup]="form" (ngSubmit)="loginSubmit()">
+            <h1 style="color: #534e62;">Login</h1>
+            <mat-form-field class="anchoInput" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+                <mat-error *ngIf="form.get('email')?.hasError('required')">
+                    Email <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="anchoInput" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput formControlName="password">
+                <mat-error *ngIf="form.get('password')?.hasError('required')">
+                    La contraseña es <strong>requerida</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" class="anchoButton" type="submit" [disabled]="form.invalid">Ingresar</button>
+        </form>
+        
+    </div>
+</div>
